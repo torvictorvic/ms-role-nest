@@ -60,7 +60,7 @@ src/
 
 ---
 
-## ⚙️ Prerequisites
+## Prerequisites
 | Tool | Minimum version |
 |------|-----------------|
 | Node.js | **18.20.4** |

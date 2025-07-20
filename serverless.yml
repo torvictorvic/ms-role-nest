@@ -1,0 +1,28 @@
+service: serverless-ms-users
+
+plugins:
+  - serverless-offline
+
+custom:
+  STAGE: ${self:provider.stage, 'dev'}
+  serverless-offline:
+    httpPort: 4000
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  timeout: 60
+
+package:
+  individually: true
+
+functions:
+  main:
+    handler: dist/main.handler
+    events:
+      - http:
+          method: ANY
+          path: /
+      - http:
+          method: ANY
+          path: '{proxy+}'
